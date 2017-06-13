@@ -20,7 +20,7 @@ then the Parse will parse the response and keep it as a list of dictionary.
 Next, The application will convert the list of dictionary based on the selected output format(CSV or JSON). And finally, it will be saved as a file.
 The console will show you where the file is located.
 
-output Fileds
+Output Fileds:
 - Id
 - Symbol
 - Exchange
@@ -34,8 +34,8 @@ output Fileds
 
 
 **********
-the application consists of several unit tests and an integration test.
-most of the tests has been writtten for only positive cases.
+The application consists of several unit tests and an integration test.
+Most of the tests have been written for only positive cases.
 
 
 
