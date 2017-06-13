@@ -11,6 +11,7 @@ Json format.
 *****************
 1. CSV Format
 2. Json Format
+
 Please select one of the above output formats (1 or 2).
 *****************
 
@@ -35,6 +36,7 @@ Output Fileds:
 
 **********
 The application consists of several unit tests and an integration test.
+
 Most of the tests have been written for only positive cases.
 
 
