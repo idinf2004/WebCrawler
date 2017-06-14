@@ -36,8 +36,19 @@ Output Fileds:
 - Regular Market Time
 - Market State
 
+*****************
+Connector.cs is responsible to send the webresuest,
+this class get WebRequestFactory as a constuctor param, 
+WebRequestFactory.cs is only in used because we wanted to wrap (HttpWebRequest)WebRequest.Create(uri) for mocking.
 
-**********
+connector.cs has a void method called "Run" which it accepts webRequestConfig and ResponseParse as method params.
+
+webRequestConfig has minimum properties for building a webrequest.
+in this application I created only one response parser and called it YahooFinParser. 
+it has a parse method which accept the response in a string format and apply regex to make a result set 
+and return the result set to the connector.
+
+*****************
 The application consists of several unit tests and an integration test.
 
 Most of the tests have been written for only positive cases.
