@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace WebCrawler
 {
@@ -26,12 +27,13 @@ namespace WebCrawler
             {
                 Console.WriteLine("Connector State: " + connector.GetState());
                 FileHandler fileHandlerHandler = new FileHandler();
+                string outputPath = ConfigurationManager.AppSettings["OutputFilePath"];
                 if (formatOption == "2")
                 {
                     // save json file
                     IConvertor<string> jsonConvertor = new JsonConvertor();
                     string output = jsonConvertor.Convert(connector.GetResults());
-                    fileHandlerHandler.Save(formats[formatOption], output);                   
+                    fileHandlerHandler.Save(formats[formatOption], output, outputPath);                   
                 }
 
                 if (formatOption == "1")
@@ -39,7 +41,7 @@ namespace WebCrawler
                     // save CSV file
                     IConvertor<string> csvConvertor = new CsvConvertor();
                     string output = csvConvertor.Convert(connector.GetResults());
-                    fileHandlerHandler.Save(formats[formatOption], output);
+                    fileHandlerHandler.Save(formats[formatOption], output, outputPath);
                 }
                 Console.WriteLine("The results has been saved in the following path: " + fileHandlerHandler.GetFilePath);
                 Console.ReadLine();
