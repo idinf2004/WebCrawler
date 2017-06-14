@@ -55,7 +55,7 @@ namespace WebCrawler
         {
             Console.WriteLine("1. CSV Format");
             Console.WriteLine("2. Json Format");
-            Console.WriteLine("Please select one  the above output formats (1 or 2)");
+            Console.WriteLine("Please select one of the above output formats (1 or 2)");
             return Console.ReadLine();
         }
 
