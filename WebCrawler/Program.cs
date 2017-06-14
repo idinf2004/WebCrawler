@@ -20,9 +20,11 @@ namespace WebCrawler
 
             WebRequestConfig webRequestConfig = new WebRequestConfig { Url = "https://finance.yahoo.com/world-indices" };
             IResponseParser yahooFinParser = new YahooFinParser();
+            Console.WriteLine("Connector State: " + connector.GetState());
             connector.Run(webRequestConfig, yahooFinParser);
             if (connector.GetState() == State.Complete)
-            {      
+            {
+                Console.WriteLine("Connector State: " + connector.GetState());
                 FileHandler fileHandlerHandler = new FileHandler();
                 if (formatOption == "2")
                 {
@@ -40,11 +42,13 @@ namespace WebCrawler
                     fileHandlerHandler.Save(formats[formatOption], output);
                 }
                 Console.WriteLine("The results has been saved in the following path: " + fileHandlerHandler.GetFilePath);
+                Console.ReadLine();
             }
             else if(connector.GetErrors().Count>0)
             {
                 foreach (var error in connector.GetErrors())
                 {
+                    Console.WriteLine("Connector State: " + connector.GetState());
                     Console.WriteLine(error.Key +" : " +error.Value);
                 }
             }
