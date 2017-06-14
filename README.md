@@ -22,9 +22,14 @@ then the Parse will parse the response and keep it as a list of dictionary.
 Next, The application will convert the list of dictionary based on the selected output format(CSV or JSON). And finally, it will be saved as a file.
 The console will show you where the file is located.
 
-The default path for saved files is Outputs in application folder. ..\WebCrawler\Outputs
+The default path for saved files is Outputs in application folder. "..\WebCrawler\Outputs"
 
-Output Fileds:
+you can change the path in the app.confg by set the path to OutputFilePath e.g. "C:\temp\"
+
+please make sure the path is a valid path.
+
+******************
+Output Fileds as requested:
 - Id
 - Symbol
 - Exchange
