@@ -73,6 +73,9 @@ namespace WebCrawler
                 _resultList = parser.Parse(responseString);
                 _state = State.Complete;
             }
+            // instead of throwing exception we add the exceptions to the error list.
+            // this will be help us to itterate the error list later on to call the specific handler ragarding to the exception
+            // the connector state will set to fail if any exception occure.
             catch (WebException ex)
             {
                 _state = State.Failed;
