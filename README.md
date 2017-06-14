@@ -1,5 +1,6 @@
 # WebCrawler
-In order to run the application you need to open the code with visual studio.
+In order to run the application you need to compile the source code.
+Then you can run WebCrawler.exe from release folder.
 
 This is a simple single thread data extractor.
 The current implementation has only one parser to parse the results from https://finance.yahoo.com/world-indices
